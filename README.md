@@ -30,6 +30,5 @@ date: 2018.5
 - "morgan": "~1.9.0",
 - "multer": "^1.3.0",
 - "popper.js": "^1.14.3",
-- 
-"serve-favicon": "^2.5.0"
+- "serve-favicon": "^2.5.0"
   
