@@ -1,0 +1,47 @@
+<%- include('header') %>
+<div class="navbar navbar-dark navbar-expand-lg bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="/">microblog</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#indexNav" aria-controls="indexNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="indexNav">
+        <ul class="navbar-nav">
+          <li class="active nav-item"><a class="nav-link" href="/">homepage</a></li>
+          <% if (!user) {%>
+          <li class="nav-item"><a class="nav-link" href="/login">login</a></li>
+          <li class="nav-item"><a class="nav-link" href="/reg">register</a></li>
+          <% } else {%>
+          <li class="nav-item"><a class="nav-link" href="/logout">logout</a></li>
+          <% } %>
+        </ul>
+      </div>
+    </div>
+</div>
+
+<div class="container">
+  <% if (success.length) { %>
+        <div class="alert alert-success">
+          <%= success[success.length-1] %>
+        </div>
+      <% } %>
+      <% if (error.length) { %>
+        <div class="alert alert-danger">
+          <%= error[error.length-1] %>
+        </div>
+  <% } %>
+  <% if(title == 'index') {%>
+  <%- include('components/home') %>
+  <% } if(title == 'register'){ %>
+  <%- include('components/regform') %>
+  <% } if(title == 'login') {%>
+  <%- include('components/login') %>
+  <% } if(user && title == user.name) { %>
+  <%- include('components/user') %>
+  <% } %> 
+  <hr />
+  <footer>
+    <p><a href="https://blog.csdn.net/github_36487770" target="_blank">十方魔</a> 2018</p>
+  </footer>
+</div>
+<%- include('footer') %>

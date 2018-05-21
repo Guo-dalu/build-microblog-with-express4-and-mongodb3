@@ -1,0 +1,17 @@
+<% if(user) {%>
+<%- include('say') %>
+<% } %>
+<ul>
+	<% posts.forEach(function(post, index) { 
+	  if (index % 3 == 0) { %>
+	    <div class="row">
+	<%} %>
+	  <% include post %>
+	<% if (index % 3 == 2) { %>
+	    </div><!-- end row -->
+	<% } %>
+	<%}) %>
+	<% if (posts.length % 3 != 0) { %>
+	  </div><!-- end row -->
+	<%} %>
+</ul>

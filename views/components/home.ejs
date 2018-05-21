@@ -1,0 +1,33 @@
+<% if(!user) { %>
+
+<div class="jumbotron homejumbotron">
+    <h1 class="display-4">歡迎來到 Microblog</h1>
+    <p class="lead">Microblog 是一個基於 Node.js 的微博系統。</p>
+    <hr class="my-4">
+    <p>
+      <a class="btn btn-primary btn-lg" href="/login" role="button">login</a>
+      <a class="btn btn-outline-info btn-lg" href="/reg" role="button">register</a>
+    </p>
+</div>
+
+<% } else { %>
+
+<%- include('say') %>
+
+<% } %>
+
+<ul>
+  <% posts.forEach(function(post, index) { 
+    if (index % 3 == 0) { %>
+      <div class="row">
+  <%} %>
+    <% include post %>
+  <% if (index % 3 == 2) { %>
+      </div><!-- end row -->
+  <% } %>
+  <%}) %>
+  <% if (posts.length % 3 != 0) { %>
+    </div><!-- end row -->
+  <%} %>
+</ul>
+

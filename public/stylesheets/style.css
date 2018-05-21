@@ -1,0 +1,30 @@
+body {
+  padding: 60px 0 40px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.homejumbotron{
+	margin-top: 30px;
+}
+
+.regheader, .regform{
+	margin-top: 30px;
+}
+
+.regerrmsg{
+	color: red;
+}
+.postcontent{
+	height: 15vh;
+	font-size: 1rem;
+	overflow-y:auto;
+	border: solid #f8f9fa;
+}
+
+a {
+  color: #00B7FF;
+}
+
+ul{
+	padding: 0;
+}
