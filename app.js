@@ -18,6 +18,8 @@ var postRouter = require('./routes/post');
 var regRouter = require('./routes/reg');
 var loginRouter = require('./routes/login');
 var logoutRouter = require('./routes/logout');
+var todolistRouter = require('./routes/todolist');
+var taskapiRouter = require('./apis/taskapi');
 
 var app = express();
 
@@ -74,6 +76,10 @@ app.use('/reg', regRouter);
 app.use('/login', loginRouter);
 
 app.use('/logout', logoutRouter);
+
+app.use('/todolist', todolistRouter);
+
+app.use('/taskapi', taskapiRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
