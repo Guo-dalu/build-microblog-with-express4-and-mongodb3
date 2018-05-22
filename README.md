@@ -1,5 +1,4 @@
-# build microblog with express, mongodb 
-# build toDoList with express, mysql(using knex as ORM)
+# build microblog/todolist with nodejs(database: [mongodb,mysql]) 
 
 ##introduction
 
