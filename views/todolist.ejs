@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title><%= title %>- Demo</title>
+    <link rel='stylesheet' href='/lib/bootstrap/dist/css/bootstrap.min.css' />
+    <link rel='stylesheet' href='/stylesheets/todolist.css' />
+    <script type="text/javascript" src='/lib/vue/dist/vue.min.js'></script>
+  </head>
+  <body>
+
+<div class="container root">
+  <h3>to do list</h3>
+  <aside>点击要做的事项，即可编辑</aside>
+  <ul>
+    <li is='to-do-item' v-for="(task,taskIndex ) in toDoTasks" :key="task.task_id"
+    :task=task
+    @remove='toDoTasks.splice(taskIndex, 1)'
+    ></li>
+    <div class="input-group mb-3">
+      <input class="form-control" v-model='newTaskName' @keyup.enter='addNewToDo' placeholder='回车键添加新任务' />
+    </div>
+  </ul>
+  <h3>finished tasks</h3>
+  <ol v-if='finishedTasks.length' class='listgroup'>
+    <li v-for='task in finishedTasks' :key='task.task_id' class="list-group-item">{{task.task_name}}</li>
+  </ol>
+  <hr />
+  <footer>
+    <p><a href="https://blog.csdn.net/github_36487770" target="_blank">十方魔</a> 2018</p>
+  </footer>
+</div>
+
+    <script type="text/javascript" src="/lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="/javascripts/todolist.js"></script>
+  </body>
+</html>
