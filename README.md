@@ -2,7 +2,7 @@
 
 ## introduction
 
-A microblog demo building with express4 and mongodb3, in '/todolist' path it also has a to-do-list demo using mysql as database and knex as ORM, wish it may help beginners for node.js, enjoy~
+A microblog demo building with express4 and mongodb3, in '/todolist' path it also has a to-do-list demo using mysql as database and knex as ORM, enjoy~
 
 《node.js 开发指南》一书中有一个express+mongodb搭建微博的例子，但书已经很老了，很多api都过时了。本项目以此为基础，把api都更新到了最新版。同时用knex连接mysql做了一个todolist的例子，包括了基本的增删改查操作，直接嵌在了路径'/todolist'下面。
 node 的初学者在踩坑时可以参照本项目。
